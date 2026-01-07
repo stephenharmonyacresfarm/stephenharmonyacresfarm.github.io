@@ -46,7 +46,7 @@
         /* Grain overlay */
         body::before {
             content: '';
-            position: fixed;
+            position: static;
             top: 0;
             left: 0;
             width: 100%;
@@ -59,13 +59,12 @@
 
         /* Header */
         header {
-            position: ;
-            top: 0;
+            position: static;            
             left: 0;
             right: 0;
             z-index: 100;
             padding: 0 3rem;
-            display: ;
+            display: static;
             justify-content: space-between;
             align-items: center;
             background: linear-gradient(to bottom, var(--cream) 0%, var(--cream) 60%, transparent 100%);
