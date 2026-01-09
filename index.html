@@ -1075,9 +1075,18 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+
+            /* Tablet navigation adjustments */
+            nav {
+                gap: 1.5rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             header {
                 padding: 0 1.5rem;
                 justify-content: space-between;
@@ -1108,6 +1117,7 @@
             nav a {
                 padding: 1rem 0;
                 border-bottom: 1px solid var(--sand);
+                font-size: 1rem;
             }
 
             nav a:last-child {
@@ -1117,6 +1127,16 @@
             nav .nav-cta {
                 margin-top: 1rem;
                 text-align: center;
+            }
+
+            .logo img {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 0 1.5rem;
             }
 
             .logo img {
