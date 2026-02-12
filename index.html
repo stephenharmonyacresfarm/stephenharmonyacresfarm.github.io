@@ -66,7 +66,7 @@
             left: 0;
             right: 0;
             z-index: 100;
-            padding: 0 3rem;
+            padding: 2rem 10rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -81,7 +81,7 @@
         }
 
         .logo img {
-            height: 350px;
+            height: 150px;
             width: auto;
         }
 
@@ -102,7 +102,7 @@
         nav a {
             text-decoration: none;
             color: var(--charcoal);
-            font-size: 0.95rem;
+            font-size: 1.15rem;
             font-weight: 500;
             position: relative;
             transition: color 0.2s;
@@ -145,13 +145,39 @@
             box-shadow: 0 4px 12px rgba(45, 74, 62, 0.3);
         }
 
+        /* Hero Banner Background */
+        .hero-banner-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .hero-banner-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(250, 245, 243, 0.2);
+        }
+
         /* Mobile Menu Button */
         .mobile-menu-btn {
             display: none;
             flex-direction: column;
             justify-content: space-between;
-            width: 30px;
-            height: 21px;
+            width: 40px;
+            height: 30px;
             background: transparent;
             border: none;
             cursor: pointer;
@@ -162,14 +188,14 @@
         .mobile-menu-btn span {
             display: block;
             width: 100%;
-            height: 3px;
+            height: 4px;
             background: var(--charcoal);
             border-radius: 2px;
             transition: all 0.3s ease;
         }
 
         .mobile-menu-btn.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
+            transform: rotate(45deg) translate(7px, 7px);
         }
 
         .mobile-menu-btn.active span:nth-child(2) {
@@ -177,7 +203,7 @@
         }
 
         .mobile-menu-btn.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
+            transform: rotate(-45deg) translate(9px, -9px);
         }
 
         /* Hero */
@@ -190,26 +216,6 @@
             overflow: hidden;
         }
 
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            right: -10%;
-            width: 60%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--sand) 0%, transparent 70%);
-            border-radius: 0 0 0 40%;
-            opacity: 0.6;
-        }
-
-        .hero-pattern {
-            position: absolute;
-            top: 15%;
-            right: 5%;
-            width: 400px;
-            height: 400px;
-            opacity: 0.08;
-        }
-
         .hero-content {
             max-width: 1400px;
             margin: 0 auto;
@@ -218,7 +224,7 @@
             align-items: center;
             text-align: center;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .hero-text {
@@ -244,9 +250,10 @@
             text-transform: uppercase;
             letter-spacing: 0.15em;
             color: var(--terracotta);
+            margin-top: 5rem;
             margin-bottom: 0.75rem;
             padding: 0.5rem 1rem;
-            background: rgba(199, 91, 57, 0.1);
+            background: rgba(255, 255, 255, 0.98);
             border-radius: 2rem;
         }
 
@@ -255,18 +262,41 @@
             color: var(--charcoal);
             margin-bottom: 1.5rem;
             letter-spacing: -0.02em;
+            text-shadow: 
+                0 0 5px rgba(255, 255, 255, 1),
+                0 0 10px rgba(255, 255, 255, 1),
+                0 0 20px rgba(255, 255, 255, 1),
+                0 0 40px rgba(255, 255, 255, 1),
+                0 0 60px rgba(255, 255, 255, 1),
+                0 0 80px rgba(255, 255, 255, 1),
+                0 0 100px rgba(255, 255, 255, 0.9);
         }
 
         .hero h1 span {
             color: var(--terracotta);
             font-style: italic;
+            text-shadow: 
+                0 0 5px rgba(255, 255, 255, 1),
+                0 0 10px rgba(255, 255, 255, 1),
+                0 0 20px rgba(255, 255, 255, 1),
+                0 0 40px rgba(255, 255, 255, 1),
+                0 0 60px rgba(255, 255, 255, 1),
+                0 0 80px rgba(255, 255, 255, 1),
+                0 0 100px rgba(255, 255, 255, 0.9);
         }
 
         .hero-description {
             font-size: 1.2rem;
-            color: var(--warm-gray);
+            color: var(--charcoal);
             max-width: 640px;
             margin: 0 auto 2.5rem;
+            text-shadow: 
+                0 0 5px rgba(255, 255, 255, 1),
+                0 0 10px rgba(255, 255, 255, 1),
+                0 0 20px rgba(255, 255, 255, 1),
+                0 0 40px rgba(255, 255, 255, 1),
+                0 0 60px rgba(255, 255, 255, 1),
+                0 0 80px rgba(255, 255, 255, 1);
         }
 
         .hero-buttons {
@@ -299,7 +329,7 @@
         }
 
         .btn-secondary {
-            background: transparent;
+            background: var(--warm-white);
             color: var(--charcoal);
             padding: 1rem 2rem;
             border-radius: 2rem;
@@ -1213,11 +1243,28 @@
 
         @media (max-width: 768px) {
             header {
-                padding: 0 1.5rem;
+                padding: 1rem 1.5rem;
             }
 
             .logo img {
-                height: 150px;
+                height: 100px;
+            }
+
+            .mobile-menu-btn {
+                width: 32px;
+                height: 24px;
+            }
+
+            .mobile-menu-btn span {
+                height: 3px;
+            }
+
+            .mobile-menu-btn.active span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+
+            .mobile-menu-btn.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
             }
 
             .hero {
@@ -1346,13 +1393,10 @@
     </header>
 
     <section class="hero">
-        <div class="hero-bg"></div>
-        <svg class="hero-pattern" viewBox="0 0 400 400">
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"/>
-            </pattern>
-            <rect width="100%" height="100%" fill="url(#grid)"/>
-        </svg>
+        <div class="hero-banner-bg">
+            <img src="hero-bg.png" alt="Community transformation - people working together to restore neighborhoods">
+            <div class="hero-banner-overlay"></div>
+        </div>
         <div class="hero-content">
             <div class="hero-text">
                 <span class="tagline">Urban - Business as Mission</span>
@@ -1483,7 +1527,7 @@
                     </div>
                     <div>
                         <h4>Email</h4>
-                        <a href="mailto:connect.urbam@gmail.com">connect.urbam@gmail.com</a>
+                        <a href="/cdn-cgi/l/email-protection#4f2c2021212a2c3b613a3d2d2e220f28222e2623612c2022"><span class="__cf_email__" data-cfemail="8ae9e5e4e4efe9fea4fff8e8ebe7caede7ebe3e6a4e9e5e7">[email&#160;protected]</span></a>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -1539,11 +1583,18 @@
                 <div class="summit-info">
                     <span class="summit-badge">Save the Date</span>
                     <h2 class="summit-title-large">Ur-BAM Summit</h2>
-                    <h2 class="summit-title-large">Summer 2026</h2>
-                    <p class="summit-date-large">Lancaster, PA</p>
+                    <h2 class="summit-title-large">June 26-27, 2026</h2>
+                    <p class="summit-date-large">Hoffman Building at Solanco Fairgrounds</p>
+                    <p class="summit-date-large">Quarryville, PA</p>
+                    <p style="margin-top: 2rem; color: var(--warm-white); font-weight: 600; font-size: 1.5rem;">Registration Opens March 1st</p>
                 </div>
                 <div class="summit-details-large">
-                    <h3>What to Expect</h3>
+                    <h3>Schedule</h3>
+                    <ul>
+                        <li><strong>June 26th</strong> - Summit Day</li>
+                        <li><strong>June 27th</strong> - City Tour</li>
+                    </ul>
+                    <h3 style="margin-top: 1.5rem;">What to Expect</h3>
                     <ul>
                         <li>Network with existing practitioners</li>
                         <li>Tour existing businesses</li>
@@ -1580,7 +1631,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Close menu when clicking a link
         document.querySelectorAll('#main-nav a').forEach(link => {
             link.addEventListener('click', () => {
@@ -1629,11 +1680,4 @@
 
         // Stagger animation for cards
         document.querySelectorAll('.what-card').forEach((card, index) => {
-            card.style.transitionDelay = `${index * 0.1}s`;
-        });
-
-        document.querySelectorAll('.focus-pillar').forEach((pillar, index) => {
-            pillar.style.transitionDelay = `${index * 0.1}s`;
-        });
-
-        document.querySelectorAll(
+            
