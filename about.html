@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ur-BAM | Love Your Neighborhood</title>
+    <title>Who We Are | Ur-BAM</title>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">    
@@ -590,6 +590,134 @@
             font-size: 0.95rem;
             color: var(--warm-gray);
             line-height: 1.6;
+        }
+
+        /* About Page Styles */
+        .about-page-hero {
+            background: var(--forest);
+            padding: 4rem 3rem;
+            text-align: center;
+        }
+
+        .about-page-hero h1 {
+            font-size: 3rem;
+            color: var(--warm-white);
+            margin: 0;
+        }
+
+        .about-page-content {
+            padding: 4rem 3rem;
+            background: var(--warm-white);
+        }
+
+        .about-container {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .about-opening {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-opening p {
+            font-size: 1.2rem;
+            color: var(--warm-gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .about-opening p:first-child {
+            font-size: 1.4rem;
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+
+        .about-block {
+            margin-bottom: 3rem;
+        }
+
+        .about-block h2 {
+            font-size: 1.6rem;
+            color: var(--forest);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--terracotta);
+            display: inline-block;
+        }
+
+        .about-block p {
+            font-size: 1.1rem;
+            color: var(--warm-gray);
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        .about-block blockquote {
+            background: var(--cream);
+            border-left: 3px solid var(--terracotta);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+            font-style: italic;
+            color: var(--charcoal);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about-block blockquote span {
+            display: block;
+            margin-top: 0.75rem;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--terracotta);
+            font-size: 0.95rem;
+        }
+
+        .about-closing-statement {
+            text-align: center;
+            padding: 2rem;
+            background: var(--cream);
+            border-radius: 1rem;
+            margin: 3rem 0;
+        }
+
+        .about-closing-statement p {
+            font-size: 1.2rem;
+            color: var(--charcoal);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .about-closing-statement strong {
+            color: var(--terracotta);
+        }
+
+        .about-back-link {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-page-hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .about-page-hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .about-page-content {
+                padding: 3rem 1.5rem;
+            }
+
+            .about-opening p:first-child {
+                font-size: 1.2rem;
+            }
+
+            .about-block blockquote {
+                padding: 1.25rem;
+            }
         }
 
         /* Focus Section */
@@ -1385,223 +1513,58 @@
             <span></span>
         </button>
         <nav id="main-nav">
-            <a href="#about">About</a>
-            <a href="#what-we-do">What We Do</a>
-            <a href="#contact">Contact</a>
-            <a href="#summit" class="nav-cta">Summit 2026</a>
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About Ur-BAM</a>
+            <a href="about.html">Who We Are</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="index.html#summit" class="nav-cta">Summit 2026</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-banner-bg">
-            <img src="hero-bg.png" alt="Community transformation - people working together to restore neighborhoods">
-            <div class="hero-banner-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <span class="tagline">Urban - Business as Mission</span>
-                <h1>Transforming our business mindset into a <span>lifestyle of mission.</span></h1>
-                <p class="hero-description">Ur-BAM is a growing network of families, practitioners, and partners committed to restoring neglected towns and inner-city neighborhoods through faithful presence, honest work, and long-term commitment.</p>
-                <div class="hero-buttons">
-                    <a href="#summit" class="btn-primary">
-                        Join the Summit
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                    <a href="#about" class="btn-secondary">Learn More</a>
-                </div>
-            </div>
-
-        </div>
+    <section class="about-page-hero">
+        <h1>Who We Are</h1>
     </section>
 
-    <section class="problem-section" id="about">
-        <div class="section-container">
-            <div class="problem-grid">
-                <div class="problem-text">
-                    <h2>Why This Initiative?</h2>
-                    <p>Across cities and small towns stand boarded-up storefronts, vacant homes, idle schools, and abandoned industrial buildings. These places are rich with history, people, and potential.</p>
-                    <br>
-                    <p>At the same time, many Christian communities possess capital, trades, skills, and families who want to live meaningful lives, with the purpose to build the Kingdom of God—but often lack clear pathways to deploy those gifts in ways that lead to lasting, locally owned Christ centered organizations.</p>
-                    <br>
-                    <p><strong>Ur-BAM exists to make the connections that close this gap.</strong></p>
-                </div>
-                <div class="problem-cards">
-                    <div class="problem-card">
-                        <div class="problem-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                                <polyline points="9 22 9 12 15 12 15 22"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4>No Clear On-Ramps</h4>
-                            <p>Clear on-ramps with vision into urban and small-town markets</p>
-                        </div>
-                    </div>
-                    <div class="problem-card">
-                        <div class="problem-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4>Trusted Local Partnerships</h4>
-                            <p>Trusted local partnerships are rare and hard to establish</p>
-                        </div>
-                    </div>
-                    <div class="problem-card">
-                        <div class="problem-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M12 6v6l4 2"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4>Patient Capital</h4>
-                            <p>Patient capital aligned with long-term outcomes is scarce</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="what-section" id="what-we-do">
-        <div class="section-container">
-            <div class="what-header">
-                <h2>What Is Ur-BAM?</h2>
-                <p>Ur-BAM is a growing network of families, practitioners, and partners committed to restoring neglected towns and inner-city neighborhoods through faithful presence, honest work, and long-term commitment. We aim to encourage and empower families to integrate their lives and businesses into needy communities in ways that keep value circulating inside the neighborhoods they serve.</p>
-            </div>
-            <div class="what-grid">
-                <div class="what-card">
-                    <span class="what-card-number">01</span>
-                    <h3>Connect</h3>
-                    <p>Link entrepreneurs, tradespeople, and investors with place-based business opportunities.</p>
-                </div>
-                <div class="what-card">
-                    <span class="what-card-number">02</span>
-                    <h3>Convene</h3>
-                    <p>Host gatherings and site visits to share proven models and cast vision.</p>
-                </div>
-                <div class="what-card">
-                    <span class="what-card-number">03</span>
-                    <h3>Empower</h3>
-                    <p>Connect businesses with patient investors through equity and revenue-shared models.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="invitation-section">
-        <div class="invitation-container">
-            <h2>Invitation</h2>
-            <p class="invitation-text">If you are considering moving into small towns or urban neighborhoods, Ur-BAM exists to walk with you as a community committed to businesses that build the Kingdom of God and bring value, stability, and Jesus' sacrificial love to the places they serve.</p>
-            <a href="#contact" class="btn-primary" style="margin-top: 1.5rem;">
-                Join the Community
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </a>
-        </div>
-    </section>
-
-    <section class="signup-section" id="contact">
-        <div class="signup-container" style="max-width: 1000px;">
-            <div class="signup-header">
-                <h2>Stay Connected</h2>
-                <p>Sign up to receive news about Ur-BAM, upcoming events, and opportunities to get involved.</p>
-            </div>
+    <section class="about-page-content">
+        <div class="about-container">
             
-            <div class="contact-top-row">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h4>Email</h4>
-                        <a href="/cdn-cgi/l/email-protection#4f2c2021212a2c3b613a3d2d2e220f28222e2623612c2022"><span class="__cf_email__" data-cfemail="8ae9e5e4e4efe9fea4fff8e8ebe7caede7ebe3e6a4e9e5e7">[email&#160;protected]</span></a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" fill="var(--warm-white)">
-                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h4>Telegram</h4>
-                        <a href="https://t.me/+khy42YVgZ2syNjdh" target="_blank">Join our Telegram community</a>
-                    </div>
-                </div>
+            <div class="about-opening">
+                <p>Who are we, what do we believe, and in what category do we belong?</p>
+                <p>In America today, many single word labels have deteriorated to mean many things, hence the meaning of the label becomes meaningless.</p>
             </div>
-            
-            <div class="signup-form">
-                <form id="signup-form" onsubmit="submitForm(event)">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Your full name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="your@email.com">
-                    </div>
-                    <button type="submit" class="btn-primary form-submit-btn">
-                        <span class="btn-text">Subscribe</span>
-                        <span class="btn-loading" style="display: none;">Sending...</span>
-                    </button>
-                </form>
-                <div id="form-success" style="display: none;" class="form-message success">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                        <polyline points="22 4 12 14.01 9 11.01"/>
-                    </svg>
-                    <p>Thank you for signing up! We'll be in touch soon.</p>
-                </div>
-                <div id="form-error" style="display: none;" class="form-message error">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <line x1="15" y1="9" x2="9" y2="15"/>
-                        <line x1="9" y1="9" x2="15" y2="15"/>
-                    </svg>
-                    <p>Something went wrong. Please try again or email us directly.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="summit-section" id="summit">
-        <div class="summit-container">
-            <div class="summit-content">
-                <div class="summit-info">
-                    <span class="summit-badge">Save the Date</span>
-                    <h2 class="summit-title-large">Ur-BAM Summit</h2>
-                    <h2 class="summit-title-large">June 26-27, 2026</h2>
-                    <p class="summit-date-large">Hoffman Building at Solanco Fairgrounds</p>
-                    <p class="summit-date-large">Quarryville, PA</p>
-                    <p style="margin-top: 2rem; color: var(--warm-white); font-weight: 600; font-size: 1.5rem;">Registration Opens March 1st</p>
-                </div>
-                <div class="summit-details-large">
-                    <h3>Schedule</h3>
-                    <ul>
-                        <li><strong>June 26th</strong> - Summit Day</li>
-                        <li><strong>June 27th</strong> - City Tour</li>
-                    </ul>
-                    <h3 style="margin-top: 1.5rem;">What to Expect</h3>
-                    <ul>
-                        <li>Network with existing practitioners</li>
-                        <li>Tour existing businesses</li>
-                        <li>Share case studies and learn what works</li>
-                    </ul>
-                </div>
+            <div class="about-block">
+                <h2>Love in Deed & Truth</h2>
+                <p>We aspire to walk, and allow our life to be formed in such a way that it genuinely displays what Jesus taught and lived. We aspire to demonstrate His love in deed and in truth.</p>
+                <blockquote>
+                    "My little children, let us not love in word or in tongue, but in deed and in truth."
+                    <span>— 1 John 3:18</span>
+                </blockquote>
             </div>
+
+            <div class="about-block">
+                <h2>A Faith We Own</h2>
+                <p>We aspire to walk in the level of dedication to that of the lives of the early Anabaptists. We feel it is time for us to own our faith. We do not see it necessary to ride the coattails of something that happened 500 years ago, but rather step up to the plate and dedicate our lives in sacrifice for the revolutionary gospel of the peaceful Kingdom of God.</p>
+                <p>We are also inspired and aspire to walk on a path of life that is influenced by that of the early church pre-Constantine.</p>
+            </div>
+
+            <div class="about-block">
+                <h2>No Cheap Gospel</h2>
+                <p>The admin team here at Ur-BAM is not promoting a cheap gospel, but rather aspiring to make evident the gospel in the lives we live sacrificially, in complete service to our risen Lord and Savior, empowered by His grace to live righteous and holy lives, which is the power of Jesus, who is full of Grace and Truth.</p>
+                <blockquote>
+                    "And the Word became flesh and dwelt among us, and we beheld His glory, the glory as of the only begotten of the Father, full of grace and truth."
+                    <span>— John 1:14</span>
+                </blockquote>
+            </div>
+
+            <div class="about-closing-statement">
+                <p>You can call us Anabaptist, you can call us Christians, but we are <strong>children of God</strong>, serving God, while living in the <strong>Kingdom of Heaven</strong> on earth.</p>
+            </div>
+
+            <div class="about-back-link">
+                <a href="index.html" class="btn-secondary">← Back to Home</a>
+            </div>
+
         </div>
     </section>
 
@@ -1616,13 +1579,14 @@
             </div>
             <div class="footer-links">
                 <h4>Learn More</h4>
-                <a href="#about">About Ur-BAM</a>
-                <a href="#what-we-do">What We Do</a>
-                <a href="#summit">Summit 2026</a>
+                <a href="index.html#about">About Ur-BAM</a>
+                <a href="about.html">Who We Are</a>
+                <a href="index.html#what-we-do">What We Do</a>
+                <a href="index.html#summit">Summit 2026</a>
             </div>
             <div class="footer-links">
                 <h4>Connect</h4>
-                <a href="#contact">Contact Us</a>
+                <a href="index.html#contact">Contact Us</a>
             </div>
         </div>
         <div class="footer-bottom">
