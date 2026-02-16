@@ -592,6 +592,80 @@
             line-height: 1.6;
         }
 
+        /* About Us Section */
+        .about-us-section {
+            padding: 6rem 3rem;
+            background: var(--warm-white);
+        }
+
+        .about-us-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .about-us-header h2 {
+            font-size: 2.5rem;
+            color: var(--charcoal);
+        }
+
+        .about-us-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-us-content p {
+            font-size: 1.1rem;
+            color: var(--warm-gray);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-us-content blockquote {
+            background: var(--cream);
+            border-left: 4px solid var(--terracotta);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 0 1rem 1rem 0;
+        }
+
+        .about-us-content blockquote p {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .about-us-content blockquote cite {
+            font-size: 0.95rem;
+            color: var(--terracotta);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .about-closing {
+            text-align: center;
+            font-size: 1.2rem !important;
+            color: var(--charcoal) !important;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--sand);
+        }
+
+        .about-closing strong {
+            color: var(--terracotta);
+        }
+
+        @media (max-width: 768px) {
+            .about-us-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .about-us-content blockquote {
+                padding: 1.25rem 1.5rem;
+            }
+        }
+
         /* Focus Section */
         .focus-section {
             padding: 6rem 3rem;
@@ -1386,6 +1460,7 @@
         </button>
         <nav id="main-nav">
             <a href="#about">About</a>
+            <a href="about.html">Who We Are</a>
             <a href="#what-we-do">What We Do</a>
             <a href="#contact">Contact</a>
             <a href="#summit" class="nav-cta">Summit 2026</a>
@@ -1494,6 +1569,19 @@
                     <p>Connect businesses with patient investors through equity and revenue-shared models.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="about-link-section">
+        <div class="section-container" style="text-align: center; padding: 4rem 2rem;">
+            <h2 style="font-size: 2rem; color: var(--charcoal); margin-bottom: 1rem;">Want to Know More About Us?</h2>
+            <p style="font-size: 1.1rem; color: var(--warm-gray); max-width: 600px; margin: 0 auto 2rem;">Learn about who we are, what we believe, and our commitment to living out the gospel in deed and truth.</p>
+            <a href="about.html" class="btn-primary">
+                Who We Are
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
         </div>
     </section>
 
@@ -1617,6 +1705,7 @@
             <div class="footer-links">
                 <h4>Learn More</h4>
                 <a href="#about">About Ur-BAM</a>
+                <a href="about.html">Who We Are</a>
                 <a href="#what-we-do">What We Do</a>
                 <a href="#summit">Summit 2026</a>
             </div>
