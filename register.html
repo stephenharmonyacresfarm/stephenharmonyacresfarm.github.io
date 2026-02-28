@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Ur-BAM Summit 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+    <style>
+        :root {
+            --cream: #FAF5F3;
+            --warm-white: #FFFAF8;
+            --terracotta: #C94038;
+            --terracotta-dark: #A8322B;
+            --forest: #4A2D2D;
+            --forest-light: #5E3D3D;
+            --charcoal: #2C2626;
+            --warm-gray: #6B5A5A;
+            --sand: #EBDDD8;
+            --gold: #C97B62;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        /* Grain overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.03;
+            z-index: 1000;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 2rem 10rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--cream);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            height: 150px;
+            width: auto;
+        }
+
+        nav {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 1.15rem;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.2s;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--terracotta);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: var(--terracotta);
+        }
+
+        .nav-cta {
+            background: var(--forest);
+            color: var(--warm-white) !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            transition: all 0.3s ease !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--forest-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(45, 74, 62, 0.3);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 40px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 101;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: var(--charcoal);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(9px, -9px);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: var(--terracotta);
+            padding: 4rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .page-hero .summit-badge {
+            background: rgba(255,255,255,0.2);
+            color: var(--warm-white);
+            padding: 0.5rem 1.25rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            color: var(--warm-white);
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--warm-white);
+            opacity: 0.9;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-hero .location {
+            font-size: 1.1rem;
+            color: var(--warm-white);
+            opacity: 0.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Schedule Section */
+        .schedule-section {
+            padding: 4rem 3rem;
+            background: var(--warm-white);
+        }
+
+        .schedule-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .schedule-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .schedule-header h2 {
+            font-size: 2.25rem;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .schedule-header p {
+            font-size: 1.1rem;
+            color: var(--warm-gray);
+        }
+
+        .day-block {
+            margin-bottom: 3rem;
+        }
+
+        .day-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--forest);
+            color: var(--warm-white);
+            padding: 0.6rem 1.25rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .day-label svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--warm-white);
+            fill: none;
+        }
+
+        .schedule-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--sand);
+            transition: all 0.2s ease;
+        }
+
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+
+        .schedule-time {
+            flex-shrink: 0;
+            width: 90px;
+            font-weight: 600;
+            color: var(--terracotta);
+            font-size: 0.95rem;
+            padding-top: 0.1rem;
+        }
+
+        .schedule-info h4 {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .schedule-info p {
+            font-size: 0.95rem;
+            color: var(--warm-gray);
+            line-height: 1.5;
+        }
+
+        .city-tour-block {
+            background: var(--cream);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            border: 2px solid var(--sand);
+            margin-top: 1rem;
+        }
+
+        .city-tour-block h4 {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .city-tour-block p {
+            font-size: 0.95rem;
+            color: var(--warm-gray);
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+
+        .city-tour-block .note {
+            font-size: 0.85rem;
+            color: var(--warm-gray);
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .expect-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+
+        .expect-tag {
+            background: var(--warm-white);
+            border: 1px solid var(--sand);
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+
+        /* Registration Section */
+        .register-section {
+            padding: 4rem 3rem;
+            background: var(--cream);
+        }
+
+        .register-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .register-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .register-header h2 {
+            font-size: 2.25rem;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .register-header p {
+            font-size: 1.1rem;
+            color: var(--warm-gray);
+        }
+
+        .donation-note {
+            text-align: center;
+            background: var(--warm-white);
+            border: 2px solid var(--sand);
+            border-radius: 1rem;
+            padding: 1.25rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .donation-note svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--terracotta);
+            flex-shrink: 0;
+        }
+
+        .donation-note p {
+            font-size: 1rem;
+            color: var(--charcoal);
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .register-form {
+            background: var(--warm-white);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        .register-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--charcoal);
+            font-size: 0.95rem;
+        }
+
+        .form-group label .required {
+            color: var(--terracotta);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 1rem 1.25rem;
+            border: 2px solid var(--sand);
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-family: 'Source Sans 3', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--cream);
+            color: var(--charcoal);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--terracotta);
+            box-shadow: 0 0 0 3px rgba(201, 64, 56, 0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--warm-gray);
+            opacity: 0.6;
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B5A5A' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--cream);
+            border-radius: 0.75rem;
+            border: 2px solid var(--sand);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-group:hover {
+            border-color: var(--terracotta);
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--terracotta);
+            margin-top: 0.1rem;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .checkbox-group .checkbox-label {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            line-height: 1.5;
+        }
+
+        .checkbox-group .checkbox-label strong {
+            display: block;
+            margin-bottom: 0.15rem;
+        }
+
+        .checkbox-group .checkbox-label small {
+            color: var(--warm-gray);
+            font-size: 0.85rem;
+        }
+
+        .form-divider {
+            height: 1px;
+            background: var(--sand);
+            margin: 0.5rem 0;
+        }
+
+        .form-section-label {
+            font-family: 'Fraunces', serif;
+            font-size: 1.15rem;
+            color: var(--forest);
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background: var(--terracotta);
+            color: var(--warm-white);
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background: var(--terracotta-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(199, 91, 57, 0.35);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-secondary {
+            background: var(--warm-white);
+            color: var(--charcoal);
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 2px solid var(--charcoal);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--charcoal);
+            color: var(--warm-white);
+            transform: translateY(-2px);
+        }
+
+        .form-message {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .form-message.success {
+            background: rgba(76, 175, 80, 0.1);
+            color: #2e7d32;
+        }
+
+        .form-message.error {
+            background: rgba(244, 67, 54, 0.1);
+            color: #c62828;
+        }
+
+        .form-message p {
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .form-message svg {
+            flex-shrink: 0;
+        }
+
+        /* Number of Attendees */
+        .attendees-counter {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .counter-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--sand);
+            background: var(--cream);
+            color: var(--charcoal);
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .counter-btn:hover {
+            border-color: var(--terracotta);
+            color: var(--terracotta);
+        }
+
+        .counter-value {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            min-width: 30px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--warm-white);
+            padding: 4rem 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-brand {
+            max-width: 350px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-tagline {
+            color: var(--terracotta);
+            font-style: italic;
+            font-family: 'Fraunces', serif;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            font-size: 0.95rem;
+            opacity: 0.7;
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.25rem;
+            color: var(--warm-white);
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 600;
+        }
+
+        .footer-links a {
+            display: block;
+            color: var(--warm-white);
+            opacity: 0.7;
+            text-decoration: none;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--terracotta);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            header {
+                padding: 0 1.5rem;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            nav#main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--cream);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 0;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                z-index: 100;
+            }
+
+            nav#main-nav.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 1rem 0;
+                border-bottom: 1px solid var(--sand);
+                font-size: 1rem;
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
+            nav .nav-cta {
+                margin-top: 1rem;
+                text-align: center;
+            }
+
+            .logo img {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo img {
+                height: 100px;
+            }
+
+            .mobile-menu-btn {
+                width: 32px;
+                height: 24px;
+            }
+
+            .mobile-menu-btn span {
+                height: 3px;
+            }
+
+            .page-hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .page-hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .page-hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .schedule-section,
+            .register-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .register-form {
+                padding: 1.5rem;
+            }
+
+            .schedule-time {
+                width: 75px;
+                font-size: 0.85rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .fade-in-delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .fade-in-delay-3 { animation-delay: 0.3s; opacity: 0; }
+    </style>
+</head>
+<body>
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById('main-nav');
+            var btn = document.querySelector('.mobile-menu-btn');
+            nav.classList.toggle('active');
+            btn.classList.toggle('active');
+        }
+
+        function updateCounter(type, delta) {
+            var el = document.getElementById(type + '-count');
+            var input = document.getElementById(type + '-input');
+            var min = (type === 'adults' || type === 'tour-adults') ? 1 : 0;
+            if (type === 'children' || type === 'tour-children') min = 0;
+            var val = parseInt(el.textContent) + delta;
+            if (val < min) val = min;
+            if (val > 20) val = 20;
+            el.textContent = val;
+            input.value = val;
+        }
+
+        function toggleTourSection() {
+            setTimeout(function() {
+                var checkbox = document.getElementById('cityTour');
+                var section = document.getElementById('tour-attendees');
+                section.style.display = checkbox.checked ? 'block' : 'none';
+            }, 10);
+        }
+
+        function submitRegistration(event) {
+            event.preventDefault();
+            
+            var form = document.getElementById('register-form');
+            var btnText = form.querySelector('.btn-text');
+            var btnLoading = form.querySelector('.btn-loading');
+            var submitBtn = form.querySelector('button[type="submit"]');
+            var successMsg = document.getElementById('form-success');
+            var errorMsg = document.getElementById('form-error');
+            
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+            
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            submitBtn.disabled = true;
+            
+            var data = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                adults: document.getElementById('adults-input').value,
+                children: document.getElementById('children-input').value,
+                cityTour: document.getElementById('cityTour').checked ? 'Yes' : 'No',
+                tourAdults: document.getElementById('cityTour').checked ? document.getElementById('tour-adults-input').value : '0',
+                tourChildren: document.getElementById('cityTour').checked ? document.getElementById('tour-children-input').value : '0',
+                emailUpdates: document.getElementById('emailUpdates').checked ? 'Yes' : 'No',
+                comments: document.getElementById('comments').value
+            };
+            
+            fetch('https://script.google.com/macros/s/AKfycby4mm5yO378jaopZlFz8_az1QibHESF0DrJYcICLSukqT9CzUWon98-LOpDEVxXZPai/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(function() {
+                form.style.display = 'none';
+                successMsg.style.display = 'flex';
+            })
+            .catch(function(error) {
+                console.error('Error:', error);
+                errorMsg.style.display = 'flex';
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+            });
+        }
+    </script>
+
+    <header>
+        <div class="logo">
+            <a href="/"><img src="logo.png" alt="Ur-BAM - Love Your Neighborhood"></a>
+        </div>
+        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="main-nav">
+            <a href="/">Home</a>
+            <a href="index.html#about">About Ur-BAM</a>
+            <a href="about.html">Who We Are</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="#register" class="nav-cta">Register Now</a>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="page-hero">
+        <span class="summit-badge fade-in">Save the Date</span>
+        <h1 class="fade-in fade-in-delay-1">The First Ur-BAM Summit</h1>
+        <p class="subtitle fade-in fade-in-delay-2">June 26 – 27, 2026</p>
+        <p class="location fade-in fade-in-delay-3">Hoffman Building at Solanco Fairgrounds</p>
+        <p class="location fade-in fade-in-delay-3" style="margin-top: 0.25rem;">172 S Lime St, Quarryville, PA 17566</p>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule-section">
+        <div class="schedule-container">
+            <div class="schedule-header">
+                <h2>Event Outline</h2>
+                <p>Two days of networking, learning, and exploring</p>
+            </div>
+
+            <!-- Day 1 -->
+            <div class="day-block">
+                <div class="day-label">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    Day 1 · June 26th — Summit Day
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-time">9:00 AM</div>
+                    <div class="schedule-info">
+                        <h4>Opening & Moravian Story</h4>
+                        <p>Discover historical examples of faith-driven community transformation</p>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">10:15 AM</div>
+                    <div class="schedule-info">
+                        <h4>Urban Business Discussion</h4>
+                        <p>Hear from entrepreneurs in Reading, Baltimore, and beyond</p>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">11:45 AM</div>
+                    <div class="schedule-info">
+                        <h4>Lunch — Food Trucks</h4>
+                        <p>Enjoy and experience the possibility of operating a food truck in an urban setting</p>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">1:00 PM</div>
+                    <div class="schedule-info">
+                        <h4>Urban Life Discussion</h4>
+                        <p>Stories from families living out their calling in urban settings</p>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">2:45 PM</div>
+                    <div class="schedule-info">
+                        <h4>Well Watered Gardens</h4>
+                        <p>A vision for agriculture in the city</p>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">3:30 PM</div>
+                    <div class="schedule-info">
+                        <h4>How About You?</h4>
+                        <p>Interactive session exploring your next steps</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="day-block">
+                <div class="day-label">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" fill="none">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Day 2 · June 27th — City Tour
+                </div>
+
+                <div class="city-tour-block">
+                    <h4>Tour Inner-City Locations</h4>
+                    <p>Visit existing businesses and walk through neighborhoods where entrepreneurs are already putting down roots. See firsthand how families are integrating their lives, trades, and enterprises into communities that need investment and faithful presence.</p>
+                    
+                    <div class="expect-list">
+                        <span class="expect-tag">Network with entrepreneurs</span>
+                        <span class="expect-tag">Tour existing businesses</span>
+                        <span class="expect-tag">Experience inner-city mission</span>
+                    </div>
+
+                    <p class="note" style="margin-top: 1rem;">* The city tour is optional. You are welcome to attend the June 26th summit without signing up for the tour.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="register-section" id="register">
+        <div class="register-container">
+            <div class="register-header">
+                <h2>Register for the Summit</h2>
+                <p>Secure your spot for the first Ur-BAM Summit</p>
+            </div>
+
+            <div class="donation-note">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                </svg>
+                <p>Free-will donation — no registration fee required</p>
+            </div>
+
+            <div class="register-form">
+                <form id="register-form" onsubmit="submitRegistration(event)">
+                    
+                    <p class="form-section-label">Your Information</p>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required placeholder="First name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" name="lastName" required placeholder="Last name">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(optional)">
+                        </div>
+                    </div>
+
+                    <div class="form-divider"></div>
+                    <p class="form-section-label">Event Details</p>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Adults</label>
+                            <div class="attendees-counter">
+                                <button type="button" class="counter-btn" onclick="updateCounter('adults', -1)">−</button>
+                                <span class="counter-value" id="adults-count">1</span>
+                                <button type="button" class="counter-btn" onclick="updateCounter('adults', 1)">+</button>
+                                <input type="hidden" id="adults-input" name="adults" value="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Children</label>
+                            <div class="attendees-counter">
+                                <button type="button" class="counter-btn" onclick="updateCounter('children', -1)">−</button>
+                                <span class="counter-value" id="children-count">0</span>
+                                <button type="button" class="counter-btn" onclick="updateCounter('children', 1)">+</button>
+                                <input type="hidden" id="children-input" name="children" value="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <label class="checkbox-group" onclick="toggleTourSection()">
+                        <input type="checkbox" id="cityTour" name="cityTour">
+                        <div class="checkbox-label">
+                            <strong>Attend Day 2 — City Tour (June 27th)</strong>
+                            <small>Tour inner-city businesses and neighborhoods where entrepreneurs are putting down roots. Optional.<br>* There may be an additional fee for the city tour.</small>
+                        </div>
+                    </label>
+
+                    <div id="tour-attendees" style="display: none; padding-left: 1rem; border-left: 3px solid var(--terracotta); margin-left: 0.5rem;">
+                        <p style="font-size: 0.95rem; color: var(--warm-gray); margin-bottom: 1rem;">How many will attend the city tour?</p>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Adults for Tour</label>
+                                <div class="attendees-counter">
+                                    <button type="button" class="counter-btn" onclick="updateCounter('tour-adults', -1)">−</button>
+                                    <span class="counter-value" id="tour-adults-count">1</span>
+                                    <button type="button" class="counter-btn" onclick="updateCounter('tour-adults', 1)">+</button>
+                                    <input type="hidden" id="tour-adults-input" name="tourAdults" value="1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Children for Tour</label>
+                                <div class="attendees-counter">
+                                    <button type="button" class="counter-btn" onclick="updateCounter('tour-children', -1)">−</button>
+                                    <span class="counter-value" id="tour-children-count">0</span>
+                                    <button type="button" class="counter-btn" onclick="updateCounter('tour-children', 1)">+</button>
+                                    <input type="hidden" id="tour-children-input" name="tourChildren" value="0">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label class="checkbox-group">
+                        <input type="checkbox" id="emailUpdates" name="emailUpdates">
+                        <div class="checkbox-label">
+                            <strong>Receive email updates</strong>
+                            <small>Stay informed about Ur-BAM news, events, and opportunities.</small>
+                        </div>
+                    </label>
+
+                    <div class="form-group">
+                        <label for="comments">Questions or Comments</label>
+                        <textarea id="comments" name="comments" placeholder="Anything you'd like us to know? (optional)" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        <span class="btn-text">Complete Registration</span>
+                        <span class="btn-loading" style="display: none;">Submitting...</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
+
+                <div id="form-success" style="display: none;" class="form-message success">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    <p>You're registered! We'll send a confirmation to your email. See you at the summit!</p>
+                </div>
+                <div id="form-error" style="display: none;" class="form-message error">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="15" y1="9" x2="9" y2="15"/>
+                        <line x1="9" y1="9" x2="15" y2="15"/>
+                    </svg>
+                    <p>Something went wrong. Please try again or email us at connect.urbam@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="logofooter.png" alt="Ur-BAM - Love Your Neighborhood" style="height: 180px; width: auto;">
+                </div>
+                <p class="footer-tagline">Love your neighborhood.</p>
+                <p class="footer-description">Ur-BAM is a platform that builds vision for locally owned enterprises in cities and small towns. We aim to encourage families to integrate their lives and businesses into needy communities - And Love Your Neighborhood.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Learn More</h4>
+                <a href="index.html#about">About Ur-BAM</a>
+                <a href="about.html">Who We Are</a>
+                <a href="index.html#what-we-do">What We Do</a>
+                <a href="index.html#summit">Summit 2026</a>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <a href="index.html#contact">Contact Us</a>
+                <a href="mailto:connect.urbam@gmail.com">connect.urbam@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Ur-BAM. All rights reserved.</span>
+            <span>Locally Owned Enterprise for Lasting Neighborhood Renewal</span>
+        </div>
+    </footer>
+
+    <script>
+        // Close menu when clicking a link
+        document.querySelectorAll('#main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.getElementById('main-nav');
+                const btn = document.querySelector('.mobile-menu-btn');
+                nav.classList.remove('active');
+                btn.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
