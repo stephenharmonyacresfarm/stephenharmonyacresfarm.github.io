@@ -900,6 +900,14 @@
             }, 10);
         }
 
+        function toggleDisplayTable() {
+            setTimeout(function() {
+                var checkbox = document.getElementById('displayTable');
+                var section = document.getElementById('display-table-details');
+                section.style.display = checkbox.checked ? 'block' : 'none';
+            }, 10);
+        }
+
         function submitRegistration(event) {
             event.preventDefault();
             
@@ -927,6 +935,8 @@
                 cityTour: document.getElementById('cityTour').checked ? 'Yes' : 'No',
                 tourAdults: document.getElementById('cityTour').checked ? document.getElementById('tour-adults-input').value : '0',
                 tourChildren: document.getElementById('cityTour').checked ? document.getElementById('tour-children-input').value : '0',
+                displayTable: document.getElementById('displayTable').checked ? 'Yes' : 'No',
+                displayDescription: document.getElementById('displayTable').checked ? document.getElementById('displayDescription').value : '',
                 emailUpdates: document.getElementById('emailUpdates').checked ? 'Yes' : 'No',
                 comments: document.getElementById('comments').value
             };
@@ -1166,6 +1176,22 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <label class="checkbox-group" onclick="toggleDisplayTable()">
+                        <input type="checkbox" id="displayTable" name="displayTable">
+                        <div class="checkbox-label">
+                            <strong>Showcase at a Display Table</strong>
+                            <small>Do you have a business, side hustle, or opportunity you'd like to showcase at a display table at the event?</small>
+                        </div>
+                    </label>
+
+                    <div id="display-table-details" style="display: none; padding-left: 1rem; border-left: 3px solid var(--terracotta); margin-left: 0.5rem;">
+                        <div class="form-group">
+                            <label for="displayDescription">What would you like to represent?</label>
+                            <textarea id="displayDescription" name="displayDescription" placeholder="Tell us about your business, side hustle, or opportunity..." rows="3"></textarea>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--warm-gray); margin-top: 0.5rem; font-style: italic;">We will contact you for details.</p>
                     </div>
 
                     <label class="checkbox-group">
