@@ -921,7 +921,7 @@
             successMsg.style.display = 'none';
             errorMsg.style.display = 'none';
 
-            if (document.getElementById('cityTour').checked && !document.querySelector('input[name="tourLocation"]:checked')) {
+            if (document.getElementById('cityTour').checked && !document.getElementById('tourLocationValue').value) {
                 alert('Please select a tour location.');
                 return;
             }
@@ -938,7 +938,7 @@
                 adults: document.getElementById('adults-input').value,
                 children: document.getElementById('children-input').value,
                 cityTour: document.getElementById('cityTour').checked ? 'Yes' : 'No',
-                tourLocation: document.getElementById('cityTour').checked ? (document.querySelector('input[name="tourLocation"]:checked') ? document.querySelector('input[name="tourLocation"]:checked').value : '') : '',
+                tourLocation: document.getElementById('cityTour').checked ? document.getElementById('tourLocationValue').value : '',
                 tourAdults: document.getElementById('cityTour').checked ? document.getElementById('tour-adults-input').value : '0',
                 tourChildren: document.getElementById('cityTour').checked ? document.getElementById('tour-children-input').value : '0',
                 displayTable: document.getElementById('displayTable').checked ? 'Yes' : 'No',
@@ -1162,15 +1162,16 @@
 
                     <div id="tour-attendees" style="display: none; padding-left: 1rem; border-left: 3px solid var(--terracotta); margin-left: 0.5rem;">
                         <p style="font-size: 0.95rem; color: var(--warm-gray); margin-bottom: 0.5rem;">Which location would you like to tour?</p>
+                        <input type="hidden" id="tourLocationValue" value="">
                         <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
                             <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer; font-size: 0.95rem;">
-                                <input type="radio" name="tourLocation" value="Baltimore" required> Baltimore
+                                <input type="radio" name="tourLocation" value="Baltimore" onclick="document.getElementById('tourLocationValue').value='Baltimore'"> Baltimore
                             </label>
                             <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer; font-size: 0.95rem;">
-                                <input type="radio" name="tourLocation" value="Reading"> Reading
+                                <input type="radio" name="tourLocation" value="Reading" onclick="document.getElementById('tourLocationValue').value='Reading'"> Reading
                             </label>
                             <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer; font-size: 0.95rem;">
-                                <input type="radio" name="tourLocation" value="Lancaster"> Lancaster
+                                <input type="radio" name="tourLocation" value="Lancaster" onclick="document.getElementById('tourLocationValue').value='Lancaster'"> Lancaster
                             </label>
                         </div>
                         <p style="font-size: 0.95rem; color: var(--warm-gray); margin-bottom: 1rem;">How many will attend the city tour?</p>
