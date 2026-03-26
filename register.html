@@ -933,6 +933,7 @@
                 adults: document.getElementById('adults-input').value,
                 children: document.getElementById('children-input').value,
                 cityTour: document.getElementById('cityTour').checked ? 'Yes' : 'No',
+                tourLocations: document.getElementById('cityTour').checked ? [document.getElementById('tourBaltimore').checked ? 'Baltimore' : '', document.getElementById('tourReading').checked ? 'Reading' : '', document.getElementById('tourLancaster').checked ? 'Lancaster' : ''].filter(Boolean).join(', ') : '',
                 tourAdults: document.getElementById('cityTour').checked ? document.getElementById('tour-adults-input').value : '0',
                 tourChildren: document.getElementById('cityTour').checked ? document.getElementById('tour-children-input').value : '0',
                 displayTable: document.getElementById('displayTable').checked ? 'Yes' : 'No',
@@ -1155,6 +1156,18 @@
                     </label>
 
                     <div id="tour-attendees" style="display: none; padding-left: 1rem; border-left: 3px solid var(--terracotta); margin-left: 0.5rem;">
+                        <p style="font-size: 0.95rem; color: var(--warm-gray); margin-bottom: 0.5rem;">Which location(s) would you like to tour?</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
+                            <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer; font-size: 0.95rem;">
+                                <input type="checkbox" id="tourBaltimore" name="tourBaltimore" value="Baltimore"> Baltimore
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer; font-size: 0.95rem;">
+                                <input type="checkbox" id="tourReading" name="tourReading" value="Reading"> Reading
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer; font-size: 0.95rem;">
+                                <input type="checkbox" id="tourLancaster" name="tourLancaster" value="Lancaster"> Lancaster
+                            </label>
+                        </div>
                         <p style="font-size: 0.95rem; color: var(--warm-gray); margin-bottom: 1rem;">How many will attend the city tour?</p>
                         <div class="form-row">
                             <div class="form-group">
