@@ -510,6 +510,7 @@
                     email: document.getElementById('email').value,
                     phone: document.getElementById('phone').value,
                     bio: document.getElementById('bio').value,
+                    talkTitle: document.getElementById('talkTitle').value,
                     topics: document.getElementById('topics').value,
                     fileName: file.name,
                     mimeType: file.type,
@@ -623,9 +624,14 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="talkTitle">Suggested Title for Your Talk</label>
+                        <input type="text" id="talkTitle" name="talkTitle" placeholder="e.g. Putting Down Roots: Starting a Business in the Inner City">
+                    </div>
+
+                    <div class="form-group">
                         <label for="topics">What will you be sharing about? <span class="required">*</span></label>
                         <p style="font-size: 0.9rem; color: var(--warm-gray); margin-bottom: 0.5rem;">Describe the topics, themes, or key points you plan to cover. This helps us plan the event schedule and lets attendees know what to expect.</p>
-                        <textarea id="topics" name="topics" required placeholder="For example: faith-driven entrepreneurship, starting a business in the city, community outreach through trade skills..." rows="5"></textarea>
+                        <textarea id="topics" name="topics" required placeholder="For example: life in the city, urban business ownership, raising a family in an urban setting, neighborhood outreach, community investment through trade skills..." rows="5"></textarea>
                     </div>
 
                     <div class="upload-progress" id="upload-progress">
