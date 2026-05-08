@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaker Submission | Ur-BAM Summit 2026</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+    <style>
+        :root {
+            --cream: #FAF5F3;
+            --warm-white: #FFFAF8;
+            --terracotta: #C94038;
+            --terracotta-dark: #A8322B;
+            --forest: #4A2D2D;
+            --forest-light: #5E3D3D;
+            --charcoal: #2C2626;
+            --warm-gray: #6B5A5A;
+            --sand: #EBDDD8;
+            --gold: #C97B62;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        /* Grain overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.03;
+            z-index: 1000;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 2rem 10rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--cream);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            height: 150px;
+            width: auto;
+        }
+
+        /* Hero */
+        .page-hero {
+            background: var(--forest);
+            padding: 4rem 3rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            color: var(--warm-white);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-hero .subtitle {
+            font-size: 1.35rem;
+            color: var(--warm-white);
+            opacity: 0.85;
+        }
+
+        /* Form Section */
+        .submit-section {
+            padding: 4rem 3rem;
+            background: var(--cream);
+        }
+
+        .submit-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .submit-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .submit-header h2 {
+            font-size: 2rem;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .submit-header p {
+            font-size: 1.05rem;
+            color: var(--warm-gray);
+        }
+
+        .submit-form {
+            background: var(--warm-white);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        .submit-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--charcoal);
+            font-size: 0.95rem;
+        }
+
+        .form-group label .required {
+            color: var(--terracotta);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 1rem 1.25rem;
+            border: 2px solid var(--sand);
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-family: 'Source Sans 3', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--cream);
+            color: var(--charcoal);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--terracotta);
+            box-shadow: 0 0 0 3px rgba(201, 64, 56, 0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--warm-gray);
+            opacity: 0.6;
+        }
+
+        .form-divider {
+            height: 1px;
+            background: var(--sand);
+            margin: 0.5rem 0;
+        }
+
+        .form-section-label {
+            font-family: 'Fraunces', serif;
+            font-size: 1.15rem;
+            color: var(--forest);
+            font-weight: 500;
+        }
+
+        /* Photo Upload */
+        .photo-upload-area {
+            border: 2px dashed var(--sand);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--cream);
+        }
+
+        .photo-upload-area:hover {
+            border-color: var(--terracotta);
+            background: var(--warm-white);
+        }
+
+        .photo-upload-area.has-file {
+            border-color: var(--terracotta);
+            border-style: solid;
+        }
+
+        .photo-upload-area svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--warm-gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .photo-upload-area p {
+            color: var(--warm-gray);
+            font-size: 0.95rem;
+        }
+
+        .photo-upload-area .file-name {
+            color: var(--terracotta);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .photo-preview {
+            display: none;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .photo-preview img {
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 0.75rem;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .photo-hint {
+            font-size: 0.85rem;
+            color: var(--warm-gray);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: var(--terracotta);
+            color: var(--warm-white);
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background: var(--terracotta-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(199, 91, 57, 0.35);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Messages */
+        .form-message {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .form-message.success {
+            background: rgba(76, 175, 80, 0.1);
+            color: #2e7d32;
+        }
+
+        .form-message.error {
+            background: rgba(244, 67, 54, 0.1);
+            color: #c62828;
+        }
+
+        .form-message p {
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .form-message svg {
+            flex-shrink: 0;
+        }
+
+        /* Progress bar */
+        .upload-progress {
+            display: none;
+            margin-top: 1rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--sand);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--terracotta);
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            font-size: 0.85rem;
+            color: var(--warm-gray);
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--warm-white);
+            padding: 2rem 3rem;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo img {
+                height: 100px;
+            }
+
+            .page-hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .page-hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .submit-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .submit-form {
+                padding: 1.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .fade-in-delay-2 { animation-delay: 0.2s; opacity: 0; }
+    </style>
+</head>
+<body>
+    <script>
+        function triggerFileInput() {
+            document.getElementById('photo').click();
+        }
+
+        function handleFileSelect(input) {
+            var uploadArea = document.getElementById('upload-area');
+            var preview = document.getElementById('photo-preview');
+            var previewImg = document.getElementById('preview-img');
+            var fileName = document.getElementById('file-name');
+
+            if (input.files && input.files[0]) {
+                var file = input.files[0];
+
+                // Validate file type
+                if (!file.type.match('image.*')) {
+                    alert('Please select an image file (JPG, PNG, etc.)');
+                    input.value = '';
+                    return;
+                }
+
+                // Validate file size (5MB max)
+                if (file.size > 5 * 1024 * 1024) {
+                    alert('Photo must be under 5MB. Please choose a smaller file.');
+                    input.value = '';
+                    return;
+                }
+
+                uploadArea.classList.add('has-file');
+                fileName.textContent = file.name;
+                fileName.style.display = 'block';
+
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImg.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function submitSpeaker(event) {
+            event.preventDefault();
+
+            var form = document.getElementById('speaker-form');
+            var btnText = form.querySelector('.btn-text');
+            var btnLoading = form.querySelector('.btn-loading');
+            var submitBtn = form.querySelector('button[type="submit"]');
+            var successMsg = document.getElementById('form-success');
+            var errorMsg = document.getElementById('form-error');
+            var progressContainer = document.getElementById('upload-progress');
+            var progressFill = document.getElementById('progress-fill');
+            var progressText = document.getElementById('progress-text');
+
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+
+            // Validate photo
+            var photoInput = document.getElementById('photo');
+            if (!photoInput.files || !photoInput.files[0]) {
+                alert('Please upload a photo.');
+                return;
+            }
+
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            submitBtn.disabled = true;
+            progressContainer.style.display = 'block';
+            progressFill.style.width = '10%';
+            progressText.textContent = 'Preparing your submission...';
+
+            var file = photoInput.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                progressFill.style.width = '40%';
+                progressText.textContent = 'Uploading photo...';
+
+                var base64Data = e.target.result.split(',')[1];
+
+                var data = {
+                    firstName: document.getElementById('firstName').value,
+                    lastName: document.getElementById('lastName').value,
+                    email: document.getElementById('email').value,
+                    bio: document.getElementById('bio').value,
+                    topics: document.getElementById('topics').value,
+                    fileName: file.name,
+                    mimeType: file.type,
+                    photoData: base64Data
+                };
+
+                progressFill.style.width = '60%';
+                progressText.textContent = 'Saving your information...';
+
+                fetch('SPEAKER_SCRIPT_URL_HERE', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(function() {
+                    progressFill.style.width = '100%';
+                    progressText.textContent = 'Done!';
+                    setTimeout(function() {
+                        form.style.display = 'none';
+                        progressContainer.style.display = 'none';
+                        successMsg.style.display = 'flex';
+                    }, 500);
+                })
+                .catch(function(error) {
+                    console.error('Error:', error);
+                    errorMsg.style.display = 'flex';
+                    progressContainer.style.display = 'none';
+                    btnText.style.display = 'inline';
+                    btnLoading.style.display = 'none';
+                    submitBtn.disabled = false;
+                });
+            };
+
+            reader.readAsDataURL(file);
+        }
+    </script>
+
+    <header>
+        <div class="logo">
+            <a href="/"><img src="logo.png" alt="Ur-BAM - Love Your Neighborhood"></a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <h1 class="fade-in">Speaker Submission</h1>
+        <p class="subtitle fade-in fade-in-delay-1">Ur-BAM Summit 2026 | June 26 &ndash; 27</p>
+    </section>
+
+    <!-- Submission Form -->
+    <section class="submit-section">
+        <div class="submit-container">
+            <div class="submit-header">
+                <h2>Submit Your Info</h2>
+                <p>Please provide a photo, short bio, and a summary of what you'll be sharing at the summit.</p>
+            </div>
+
+            <div class="submit-form">
+                <form id="speaker-form" onsubmit="submitSpeaker(event)">
+
+                    <p class="form-section-label">Your Information</p>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required placeholder="First name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" name="lastName" required placeholder="Last name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-divider"></div>
+                    <p class="form-section-label">Your Photo</p>
+
+                    <div class="form-group">
+                        <label>Headshot or Profile Photo <span class="required">*</span></label>
+                        <div class="photo-upload-area" id="upload-area" onclick="triggerFileInput()">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                                <polyline points="17 8 12 3 7 8"/>
+                                <line x1="12" y1="3" x2="12" y2="15"/>
+                            </svg>
+                            <p>Click to upload your photo</p>
+                            <p class="file-name" id="file-name" style="display: none;"></p>
+                            <input type="file" id="photo" name="photo" accept="image/*" style="display: none;" onchange="handleFileSelect(this)">
+                        </div>
+                        <div class="photo-preview" id="photo-preview">
+                            <img id="preview-img" alt="Photo preview">
+                        </div>
+                        <p class="photo-hint">JPG or PNG, max 5MB. A clear headshot works best.</p>
+                    </div>
+
+                    <div class="form-divider"></div>
+                    <p class="form-section-label">About Your Talk</p>
+
+                    <div class="form-group">
+                        <label for="bio">Short Bio <span class="required">*</span></label>
+                        <textarea id="bio" name="bio" required placeholder="Tell us a little about yourself, your background, and what you do..." rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="topics">What will you be sharing about? <span class="required">*</span></label>
+                        <textarea id="topics" name="topics" required placeholder="Describe the topics, themes, or key points you plan to cover..." rows="4"></textarea>
+                    </div>
+
+                    <div class="upload-progress" id="upload-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <p class="progress-text" id="progress-text">Preparing...</p>
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        <span class="btn-text">Submit</span>
+                        <span class="btn-loading" style="display: none;">Uploading...</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
+
+                <div id="form-success" style="display: none;" class="form-message success">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    <p>Thank you! Your submission has been received. We'll be in touch if we need anything else.</p>
+                </div>
+                <div id="form-error" style="display: none;" class="form-message error">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="15" y1="9" x2="9" y2="15"/>
+                        <line x1="9" y1="9" x2="15" y2="15"/>
+                    </svg>
+                    <p>Something went wrong. Please try again or email us at connect.urbam@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Ur-BAM. All rights reserved.</span>
+        </div>
+    </footer>
+</body>
+</html>
