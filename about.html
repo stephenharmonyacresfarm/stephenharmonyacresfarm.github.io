@@ -698,6 +698,87 @@
             margin-top: 2rem;
         }
 
+        /* Meet the Presenters */
+        .presenters-section {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 2px solid var(--sand);
+        }
+
+        .presenters-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .presenters-header h2 {
+            font-size: 2rem;
+            color: var(--forest);
+            margin-bottom: 0.5rem;
+        }
+
+        .presenters-header p {
+            font-size: 1.1rem;
+            color: var(--warm-gray);
+        }
+
+        .presenter-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            background: var(--cream);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--sand);
+            transition: all 0.3s ease;
+        }
+
+        .presenter-card:hover {
+            border-color: var(--terracotta);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        }
+
+        .presenter-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 0.75rem;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .presenter-info h3 {
+            font-size: 1.25rem;
+            color: var(--charcoal);
+            margin-bottom: 0.25rem;
+        }
+
+        .presenter-talk-title {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            color: var(--terracotta);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .presenter-info p {
+            font-size: 0.95rem;
+            color: var(--warm-gray);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+            .presenter-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .presenter-photo {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
         @media (max-width: 768px) {
             .about-page-hero {
                 padding: 3rem 1.5rem;
@@ -1559,6 +1640,23 @@
 
             <div class="about-closing-statement">
                 <p>You can call us Anabaptist, you can call us Christians, but we are <strong>children of God</strong>, serving God, while living in the <strong>Kingdom of Heaven</strong> on earth.</p>
+            </div>
+
+            <div class="presenters-section">
+                <div class="presenters-header">
+                    <h2>Meet the Presenters</h2>
+                    <p>The people sharing at the Ur-BAM Summit 2026</p>
+                </div>
+
+                <div class="presenter-card">
+                    <img src="speakers/michael-esh.jpg" alt="Michael Esh" class="presenter-photo">
+                    <div class="presenter-info">
+                        <h3>Michael Esh</h3>
+                        <div class="presenter-talk-title">Opening Devotional</div>
+                        <p>Michael and Liz Esh have five children and live in Philipsburg, Pennsylvania. Before moving to Philipsburg to be part of a new church plant, they spent 10 years operating a grass-fed dairy. Since moving, Michael now does sales for a construction company. As he puts it, "God took my cows away and gave me people to work with, so I would learn how to work with people." Their desire is to use agriculture and business to reach the people around them.</p>
+                    </div>
+                </div>
+
             </div>
 
             <div class="about-back-link">
