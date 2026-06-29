@@ -338,6 +338,10 @@
             font-weight: 500;
         }
 
+        .gallery-item.portrait {
+            aspect-ratio: 3/4;
+        }
+
         /* Featured photo - full width */
         .gallery-item.featured {
             grid-column: 1 / -1;
@@ -659,6 +663,10 @@
                 aspect-ratio: 4/3;
             }
 
+            .gallery-item.portrait {
+                aspect-ratio: 3/4;
+            }
+
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -773,19 +781,19 @@
     <section class="gallery-section" style="background: var(--warm-white);">
         <div class="gallery-container">
             <div class="gallery-header">
-                <h2>City Tour</h2>
+                <h2>Baltimore City Tour</h2>
                 <p>Photos from the neighborhood tour</p>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item featured" onclick="openLightbox('gallery/tour-group.jpg')">
-                    <img src="gallery/tour-group.jpg" alt="Group photo from the city tour" loading="lazy">
-                    <div class="caption">City tour group</div>
+                    <img src="gallery/tour-group.jpg" alt="Group photo from the Baltimore city tour" loading="lazy">
+                    <div class="caption">Baltimore city tour group</div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('gallery/tour-beehives.jpg')">
-                    <img src="gallery/tour-beehives.jpg" alt="Urban beekeeping on a rooftop" loading="lazy">
+                <div class="gallery-item portrait" onclick="openLightbox('gallery/tour-beehives.jpg')">
+                    <img src="gallery/tour-beehives.jpg" alt="Urban beekeeping on a rooftop in Baltimore" loading="lazy">
                     <div class="caption">Urban beekeeping</div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('gallery/tour-garden.jpg')">
+                <div class="gallery-item portrait" onclick="openLightbox('gallery/tour-garden.jpg')">
                     <img src="gallery/tour-garden.jpg" alt="Community garden beds along a sidewalk" loading="lazy">
                     <div class="caption">Community garden</div>
                 </div>
@@ -793,19 +801,19 @@
                     <img src="gallery/tour-workshop.jpg" alt="Woodworking workshop" loading="lazy">
                     <div class="caption">Local workshop</div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('gallery/tour-neighborhood.jpg')">
-                    <img src="gallery/tour-neighborhood.jpg" alt="Exploring the neighborhood" loading="lazy">
-                    <div class="caption">Neighborhood walk</div>
+                <div class="gallery-item portrait" onclick="openLightbox('gallery/tour-neighborhood.jpg')">
+                    <img src="gallery/tour-neighborhood.jpg" alt="Exploring the Hampden neighborhood" loading="lazy">
+                    <div class="caption">Hampden neighborhood</div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('gallery/tour-pottery.jpg')">
-                    <img src="gallery/tour-pottery.jpg" alt="Visiting a local pottery studio" loading="lazy">
+                <div class="gallery-item portrait" onclick="openLightbox('gallery/tour-pottery.jpg')">
+                    <img src="gallery/tour-pottery.jpg" alt="Visiting a local pottery studio in Hampden" loading="lazy">
                     <div class="caption">Local pottery studio</div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('gallery/tour-church.jpg')">
-                    <img src="gallery/tour-church.jpg" alt="Church building in the neighborhood" loading="lazy">
-                    <div class="caption">Neighborhood church</div>
+                <div class="gallery-item portrait" onclick="openLightbox('gallery/tour-church.jpg')">
+                    <img src="gallery/tour-church.jpg" alt="Hampden Church in Baltimore" loading="lazy">
+                    <div class="caption">Hampden Church</div>
                 </div>
-                <div class="gallery-item" onclick="openLightbox('gallery/tour-church-sign.jpg')">
+                <div class="gallery-item portrait" onclick="openLightbox('gallery/tour-church-sign.jpg')">
                     <img src="gallery/tour-church-sign.jpg" alt="Future site of Hampden Mennonite Church and Hampden Christian School" loading="lazy">
                     <div class="caption">Hampden Mennonite Church &amp; School</div>
                 </div>
