@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summit 2026 Recap | Ur-BAM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+    <style>
+        :root {
+            --cream: #FAF5F3;
+            --warm-white: #FFFAF8;
+            --terracotta: #C94038;
+            --terracotta-dark: #A8322B;
+            --forest: #4A2D2D;
+            --forest-light: #5E3D3D;
+            --charcoal: #2C2626;
+            --warm-gray: #6B5A5A;
+            --sand: #EBDDD8;
+            --gold: #C97B62;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        /* Grain overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.03;
+            z-index: 1000;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 2rem 10rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--cream);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            height: 150px;
+            width: auto;
+        }
+
+        nav {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 1.15rem;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.2s;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--terracotta);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: var(--terracotta);
+        }
+
+        .nav-cta {
+            background: var(--forest);
+            color: var(--warm-white) !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            transition: all 0.3s ease !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--forest-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(45, 74, 62, 0.3);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 40px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 101;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: var(--charcoal);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(9px, -9px);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: var(--terracotta);
+            padding: 5rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .page-hero .summit-badge {
+            background: rgba(255,255,255,0.2);
+            color: var(--warm-white);
+            padding: 0.5rem 1.25rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            color: var(--warm-white);
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--warm-white);
+            opacity: 0.9;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-hero .location {
+            font-size: 1.1rem;
+            color: var(--warm-white);
+            opacity: 0.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-hero .hero-description {
+            font-size: 1.15rem;
+            color: var(--warm-white);
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 1.5rem auto 0;
+            position: relative;
+            z-index: 1;
+            line-height: 1.8;
+        }
+
+        /* Recap Intro */
+        .recap-intro {
+            padding: 4rem 3rem;
+            background: var(--warm-white);
+        }
+
+        .recap-intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .recap-intro h2 {
+            font-size: 2.25rem;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .recap-intro p {
+            font-size: 1.1rem;
+            color: var(--warm-gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Photo Gallery */
+        .gallery-section {
+            padding: 4rem 3rem;
+            background: var(--cream);
+        }
+
+        .gallery-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-header h2 {
+            font-size: 2.25rem;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .gallery-header p {
+            font-size: 1.1rem;
+            color: var(--warm-gray);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            border-radius: 1rem;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 2rem 1.25rem 1.25rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Featured photo - full width */
+        .gallery-item.featured {
+            grid-column: 1 / -1;
+            aspect-ratio: 16/7;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 0.5rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background: none;
+            line-height: 1;
+        }
+
+        /* Videos Section */
+        .videos-section {
+            padding: 4rem 3rem;
+            background: var(--warm-white);
+        }
+
+        .videos-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .videos-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .videos-header h2 {
+            font-size: 2.25rem;
+            color: var(--charcoal);
+            margin-bottom: 0.75rem;
+        }
+
+        .videos-header p {
+            font-size: 1.1rem;
+            color: var(--warm-gray);
+        }
+
+        .video-placeholder {
+            background: var(--cream);
+            border: 2px dashed var(--sand);
+            border-radius: 1.25rem;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .video-placeholder svg {
+            width: 48px;
+            height: 48px;
+            stroke: var(--warm-gray);
+            fill: none;
+            margin-bottom: 1rem;
+        }
+
+        .video-placeholder p {
+            font-size: 1.05rem;
+            color: var(--warm-gray);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: var(--charcoal);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Brochure Download */
+        .brochure-section {
+            padding: 3rem;
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--forest);
+            color: var(--warm-white);
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--forest-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(45, 74, 62, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--forest);
+            color: var(--warm-white);
+            padding: 4rem 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-brand {
+            max-width: 350px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-tagline {
+            color: var(--terracotta);
+            font-style: italic;
+            font-family: 'Fraunces', serif;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            font-size: 0.95rem;
+            opacity: 0.7;
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.25rem;
+            color: var(--warm-white);
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 600;
+        }
+
+        .footer-links a {
+            display: block;
+            color: var(--warm-white);
+            opacity: 0.7;
+            text-decoration: none;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--terracotta);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            header {
+                padding: 0 1.5rem;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            nav#main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--cream);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 0;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                z-index: 100;
+            }
+
+            nav#main-nav.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 1rem 0;
+                border-bottom: 1px solid var(--sand);
+                font-size: 1rem;
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
+            nav .nav-cta {
+                margin-top: 1rem;
+                text-align: center;
+            }
+
+            .logo img {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo img {
+                height: 100px;
+            }
+
+            .mobile-menu-btn {
+                width: 32px;
+                height: 24px;
+            }
+
+            .mobile-menu-btn span {
+                height: 3px;
+            }
+
+            .page-hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .page-hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .page-hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .gallery-section,
+            .recap-intro,
+            .videos-section,
+            .brochure-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item.featured {
+                aspect-ratio: 4/3;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .fade-in-delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .fade-in-delay-3 { animation-delay: 0.3s; opacity: 0; }
+    </style>
+</head>
+<body>
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById('main-nav');
+            var btn = document.querySelector('.mobile-menu-btn');
+            nav.classList.toggle('active');
+            btn.classList.toggle('active');
+        }
+
+        function openLightbox(src) {
+            var lightbox = document.getElementById('lightbox');
+            document.getElementById('lightbox-img').src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            var lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    </script>
+
+    <header>
+        <div class="logo">
+            <a href="/"><img src="logo.png" alt="Ur-BAM - Love Your Neighborhood"></a>
+        </div>
+        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="main-nav">
+            <a href="/">Home</a>
+            <a href="/#about">About Ur-BAM</a>
+            <a href="about">Who We Are</a>
+            <a href="/#contact">Contact</a>
+            <a href="summit-2026" class="nav-cta">Summit 2026</a>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="page-hero">
+        <span class="summit-badge fade-in">June 26 &ndash; 27, 2026</span>
+        <h1 class="fade-in fade-in-delay-1">The First Ur-BAM Summit</h1>
+        <p class="subtitle fade-in fade-in-delay-2">Thank You for Being Part of It</p>
+        <p class="location fade-in fade-in-delay-3">Hoffman Building, Solanco Fairgrounds &middot; Quarryville, PA</p>
+        <p class="hero-description fade-in fade-in-delay-3">The inaugural Ur-BAM Summit brought together families, entrepreneurs, and communities to share vision for locally owned enterprises in cities and small towns.</p>
+    </section>
+
+    <!-- Recap Intro -->
+    <section class="recap-intro">
+        <div class="recap-intro-content">
+            <h2>A Day of Vision and Fellowship</h2>
+            <p>The first Ur-BAM Summit gathered people from across the region for a full day of talks, discussions, and connection. From urban business to community farming, speakers shared their stories of integrating faith, family, and enterprise into the neighborhoods that need it most.</p>
+            <p>Thank you to everyone who attended, presented, volunteered, and made this event possible. We look forward to what comes next.</p>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="gallery-section">
+        <div class="gallery-container">
+            <div class="gallery-header">
+                <h2>Summit Highlights</h2>
+                <p>Photos from the event</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item featured" onclick="openLightbox('gallery/summit-main-room.jpg')">
+                    <img src="gallery/summit-main-room.jpg" alt="Ur-BAM Summit main session with attendees gathered around tables" loading="lazy">
+                    <div class="caption">Main session at Hoffman Building</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('gallery/summit-panel.jpg')">
+                    <img src="gallery/summit-panel.jpg" alt="Panel discussion with speakers sharing their stories" loading="lazy">
+                    <div class="caption">Panel discussion</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('gallery/summit-display-tables.jpg')">
+                    <img src="gallery/summit-display-tables.jpg" alt="Attendees browsing display tables and connecting" loading="lazy">
+                    <div class="caption">Display tables and networking</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('gallery/summit-lunch.jpg')">
+                    <img src="gallery/summit-lunch.jpg" alt="Fellowship during the lunch break" loading="lazy">
+                    <div class="caption">Lunch and fellowship</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section class="videos-section" id="videos">
+        <div class="videos-container">
+            <div class="videos-header">
+                <h2>Summit Videos</h2>
+                <p>Recordings from the event</p>
+            </div>
+            <div class="video-placeholder">
+                <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <p>Videos from the summit are coming soon. Check back for recordings of the talks and discussions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brochure Download -->
+    <section class="brochure-section">
+        <a href="UrBAM_Summit_Brochure.pdf" download class="btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Summit Brochure
+        </a>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <img id="lightbox-img" src="" alt="Full size photo">
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="logo-footer.png" alt="Ur-BAM - Love Your Neighborhood" style="height: 180px; width: auto;">
+                </div>
+                <p class="footer-tagline">Love your neighborhood.</p>
+                <p class="footer-description">Ur-BAM is a platform that builds vision for locally owned enterprises in cities and small towns. We aim to encourage families to integrate their lives and businesses into needy communities - And Love Your Neighborhood.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Learn More</h4>
+                <a href="/#about">About Ur-BAM</a>
+                <a href="about">Who We Are</a>
+                <a href="/#what-we-do">What We Do</a>
+                <a href="summit-2026">Summit 2026</a>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <a href="/#contact">Contact Us</a>
+                <a href="mailto:connect.urbam@gmail.com">connect.urbam@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Ur-BAM. All rights reserved.</span>
+            <span>Locally Owned Enterprise for Lasting Neighborhood Renewal</span>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('#main-nav a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                var nav = document.getElementById('main-nav');
+                var btn = document.querySelector('.mobile-menu-btn');
+                nav.classList.remove('active');
+                btn.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
